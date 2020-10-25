@@ -1,0 +1,17 @@
+In this assignment you will implement a binary search tree.
+Before you start coding consider the ADT and make sure you have all interfaces in place.
+You do not have to make a generic tree; it is fine with a tree that can take integers.
+The traversals mayalso return a string, you don’t need to return an iterator.
+You should build the tree it in three phases:
+1.A binary tree
+2.A binary search tree with add
+3.A binary search tree with remove
+Test driven development is well suite for the project since it can be broken into small simple bits that can be test on their own.
+ Besides,it is a requirement that all part sof the code are well tested.
+ When you encounter errors,it can be useful to see a graphical representation of the tree.
+ To that end I have uploaded the source code for a simple ascii code printout of a tree, but you are welcome to make a nicer graphical presentation(it is not a requirement).
+ Remember that in phase one there are no add or delete methods.
+  This is because a general binary tree does not have a specific ordering.
+  In order to create a tree you must manually do it by creating and combining Nodes.
+  The assignmen twill be handed in 1/11-
+   According to the course description mandatory assignments must be handed in and approved in order to register for the exam.
