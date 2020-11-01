@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinaryTree implements IBineryTree
 {
     IBineryTreeNode rootBinaryTreeNode;
@@ -74,11 +76,35 @@ public class BinaryTree implements IBineryTree
 
     }
 
-
+    ArrayList inOrderList;
     @Override
-    public BinaryTree inOrder()
+    public ArrayList inOrder()
     {
-        return null;
+        inOrderList = new ArrayList<IBineryTree>();//we could use something more efficient latter like array
+//        Algorithm Inorder(tree)
+//            1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+//        2. Visit the root.
+//        3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+        inOrder(rootBinaryTreeNode);
+        return inOrderList;
+
+
+    }
+
+    private void inOrder(IBineryTreeNode node)
+    {
+
+        if (node == null)
+            return;
+
+        /* first recur on left child */
+        inOrder(node.getLeftChild());
+
+        /* then print the data of node */
+        inOrderList.add(node.getElement());
+
+        /* now recur on right child */
+        inOrder(node.getRightChild());
     }
 
     @Override

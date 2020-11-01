@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface IBineryTree
 {
 
@@ -10,7 +12,7 @@ public interface IBineryTree
 
     boolean contains(int val);
 
-    BinaryTree inOrder(); //Returns an preOrder representation of the tree
+    ArrayList inOrder(); //Returns an preOrder representation of the tree
 
     BinaryTree postOrder();//Returns an postOrder representation of the tree
     BinaryTree leveltOrder();
