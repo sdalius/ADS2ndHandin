@@ -20,7 +20,7 @@ public class Main
 //        System.out.println(bineryTree.contains(5));
 //        System.out.println(bineryTree.contains(1));
 //        System.out.println(bineryTree.contains(58));
-        System.out.println(bineryTree.inOrder());
+        System.out.println(bineryTree.leveltOrder());
 
     //TODO Junit tests
     }

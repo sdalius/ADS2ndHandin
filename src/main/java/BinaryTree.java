@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree implements IBineryTree
 {
@@ -107,17 +109,66 @@ public class BinaryTree implements IBineryTree
         inOrder(node.getRightChild());
     }
 
+
+
+
+
+    ArrayList postOrderList;
     @Override
-    public BinaryTree postOrder()
+    public ArrayList postOrder()
     {
-        return null;
+        postOrderList = new ArrayList<IBineryTreeNode>();
+       postOrder(rootBinaryTreeNode);
+       return postOrderList;
     }
 
-    @Override
-    public BinaryTree leveltOrder()
+    private void postOrder(IBineryTreeNode node)
     {
-        return null;
+        if (node == null)
+        {
+            return;
+        }
+        postOrder(node.getLeftChild());
+        postOrder(node.getRightChild());
+        postOrderList.add(node.getElement());
+
+
     }
+
+
+
+
+
+    Queue queue;
+    ArrayList levelOrderList;
+    @Override
+    public ArrayList leveltOrder()
+    {
+        queue = new LinkedList();
+        levelOrderList = new ArrayList<IBineryTree>();
+        levelOrder(rootBinaryTreeNode);
+        return levelOrderList;
+    }
+
+    private ArrayList levelOrder(IBineryTreeNode node)
+    {
+        queue.add(node);
+        while(!queue.isEmpty()) {
+            IBineryTreeNode current = (IBineryTreeNode) queue.poll();
+            levelOrderList.add(current.getElement());
+
+             if (current.getLeftChild() != null){
+                queue.add(current.getLeftChild());
+            }
+
+            if (current.getRightChild() != null){
+                queue.add(current.getRightChild());
+            }
+
+        }
+        return levelOrderList;
+    }
+
 
     @Override
     public int height()
@@ -147,9 +198,3 @@ public class BinaryTree implements IBineryTree
         }
     }
 }
-// else if (node.getRightChild() != null && node.getLeftChild() != null)
-// {
-//         inOrder(node.getLeftChild());
-//         sout ("root get element");
-//         inOrder(node.getRightChild());
-// } in order traveral stuff info
