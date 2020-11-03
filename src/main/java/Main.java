@@ -2,7 +2,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-        IBineryTree bineryTree = new BinaryTree(1);
+        IBineryTree bineryTree = new BinerySearchTree(1);
+        BinerySearchTree binerySearchTree = new BinerySearchTree(1);
+
+
 
         bineryTree.getRoot().addLeftChild(new BinaryTreeNode(3));
         bineryTree.getRoot().getLeftChild().addLeftChild(new BinaryTreeNode(3));
@@ -20,7 +23,11 @@ public class Main
 //        System.out.println(bineryTree.contains(5));
 //        System.out.println(bineryTree.contains(1));
 //        System.out.println(bineryTree.contains(58));
-        System.out.println(bineryTree.leveltOrder());
+
+        binerySearchTree.addElementToTree(new BinaryTreeNode(2));
+        binerySearchTree.addElementToTree(new BinaryTreeNode(3));
+        System.out.println(binerySearchTree.leveltOrder());
+
 
     //TODO Junit tests
     }

@@ -4,7 +4,7 @@ import java.util.Queue;
 
 public class BinaryTree implements IBineryTree
 {
-    IBineryTreeNode rootBinaryTreeNode;
+    protected BinaryTreeNode rootBinaryTreeNode;
 
     public BinaryTree(int rootValue)
     {
@@ -12,7 +12,7 @@ public class BinaryTree implements IBineryTree
     }
 
     @Override
-    public IBineryTreeNode getRoot()
+    public BinaryTreeNode getRoot()
     {
         return rootBinaryTreeNode;
     }
